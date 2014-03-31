@@ -1,0 +1,8 @@
+<h1>Inquiries</h1>
+<ul>
+  <% @inquiries.each do |inquiry| %>
+ <!--    <li><%= "#{inquiry.subject} - #{inquiry.first_name} #{inquiry.last_name} #{inquiry.email}" %><li>
+    <li><%= inquiry.description %></li> -->
+    <li><%= link_to inquiry.subject, inquiry_path(inquiry) %></li>
+  <% end %>
+</ul>

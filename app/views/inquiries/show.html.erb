@@ -1,0 +1,7 @@
+<h1><%= @inquiry.subject %></h1>
+
+<p><%= @inquiry.description %></p>
+
+<p><%= "Name: #{@inquiry.first_name} #{@inquiry.last_name} Email: #{@inquiry.email}" %></p>
+
+<%= link_to 'Destroy', @inquiries, method: :delete, data: { confirm: 'Are you sure?' } %>
