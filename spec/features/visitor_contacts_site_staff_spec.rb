@@ -31,7 +31,7 @@ feature "User contacts sites staff", %q{
       expect(page).to have_content "you're awesome"
     end
 
-    it 'requires a user to have an email' do
+    it 'requires a user to have an first name' do
       fill_in "Email", with: 'dhgrainger@gmail.com'
       fill_in "Subject", with: "you're awesome"
       fill_in "Description", with: "this place is a mess awesome job"
