@@ -26,16 +26,6 @@ ActiveRecord::Schema.define(version: 20140330004850) do
     t.datetime "updated_at"
   end
 
-  create_table "issues", force: true do |t|
-    t.string   "email",       null: false
-    t.string   "subject",     null: false
-    t.text     "description", null: false
-    t.string   "first_name",  null: false
-    t.string   "last_name",   null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

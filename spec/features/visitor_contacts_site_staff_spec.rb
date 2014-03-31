@@ -9,10 +9,10 @@ feature "User contacts sites staff", %q{
   before(:each) do
       visit '/inquiries/new'
       click_on "Sign up"
-      user = ('a'..'z').to_a.shuffle.pop(20).join
-      fill_in "Email", with: "#{user}@shlomo.com"
-      fill_in "Password", with: "adminqwerty"
-      fill_in "Password confirmation", with: "adminqwerty"
+      user = "doug"
+      fill_in "Email", with: "dhgrainger@gmail.com"
+      fill_in "Password", with: "asdfg123"
+      fill_in "Password confirmation", with: "asdfg123"
       click_on "Sign up"
   end
 
@@ -29,6 +29,18 @@ feature "User contacts sites staff", %q{
       click_on "Submit Inquiry"
 
       expect(page).to have_content "you're awesome"
+    end
+
+    it 'requires a user to have an email' do
+      fill_in "Email", with: 'dhgrainger@gmail.com'
+      fill_in "Subject", with: "you're awesome"
+      fill_in "Description", with: "this place is a mess awesome job"
+      fill_in "First name", with: ''
+      fill_in "Last name", with: "grainger"
+
+      click_on "Submit Inquiry"
+
+      expect(page).to have_content("First name can't be blank")
     end
   end
 end
